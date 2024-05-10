@@ -51,20 +51,20 @@ const dcHero =["superman","flash","batman"];
 marvalHero.push(dcHero);
 console.log(marvalHero);
 marvalHero.pop();
-
-
 const allHero = marvalHero.concat(dcHero);
-console.log(allHero);
+console.log(4 ,allHero);
 
 
 
-const all_new_hero =[...marvalHero,...dcHero];
+const all_new_hero =[...marvalHero,...dcHero];//spread is use to combine array
 console.log(all_new_hero);
 
 const another_array = [1,2,3,4,[5,6,7],8,[9,1,3]]
 const realaontherAraay = another_array.flat()
 console.log(realaontherAraay);
 
+
+// *******converting into array
 console.log(Array.isArray("aditya"));
 console.log(Array.isArray([1,2,3,4,5]));
 console.log(Array.from("aditya"));
