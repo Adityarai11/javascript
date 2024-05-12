@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class=" language">
+        <li>javascript</li>
+    </ul>
+</body>
+<script>
+ //create element
+ function addLanguage(langName) {
+    const li = document.createElement('li');
+    li.innerHTML= `${langName}`;
+    document.querySelector('.language').appendChild(li)
+ }
+ addLanguage("python")
+ addLanguage("java")
+
+ function addOptiLanguage(langName) {
+    const li = document.createElement('li');
+    li.appendChild(document.createTextNode(langName));
+    document.querySelector('.language').appendChild(li)
+ }
+ addOptiLanguage("typescript");
+
+
+//********Edit element********
+const secondLang = document.querySelector("li:nth-child(2)")
+// secondLang.innerHTML = "Rust";
+const newLi = document.createElement('li')
+newLi.textContent = "rust";
+secondLang.replaceWith(newLi);
+
+const firstChild = document.querySelector("li:first-child");
+firstChild.outerHTML ="<li>TypeScript</li>"
+//**********Remove*********
+const lastLang =document.querySelector("li:last-child");
+lastLang.remove();
+
+</script>
+</html>
