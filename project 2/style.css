@@ -1,9 +1,21 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: aqua;
+  height: 100vh;
+  margin: 0;
+}
 .container {
-    width: 575px;
-    height: 825px;
-  
-    background-color: #797978;
-    padding-left: 30px;
+  width: 500px;
+  height: 600px;
+  background-color: #797978;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
   }
   #height,
   #weight {
@@ -22,7 +34,7 @@
     font-size: 35px;
     margin-left: 90px;
     margin-top: 20px;
-    color: blue;
+    color:white;
   }
   
   button {
@@ -30,7 +42,7 @@
     height: 35px;
     margin-left: 90px;
     margin-top: 25px;
-    background-color: #fff;
+    background-color: green;
     padding: 1px 30px;
     border-radius: 8px;
     color: #212121;
