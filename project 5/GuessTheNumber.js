@@ -34,7 +34,7 @@ function validateGuess(guess) {
             displayMessage(`Game over.Random was ${random}`)
             endGame()
         }else{
-            desplayGuess(guess)
+            displayGuess(guess)
             checkGuess(guess)
         }
     }
@@ -43,6 +43,7 @@ function validateGuess(guess) {
 function checkGuess(guess) {
     if (guess === random) {
         displayMessage(`you guess it right`)
+        endGame();
     
     }else if(guess<random){
         displayMessage(`number is Too low`)
@@ -53,16 +54,25 @@ function checkGuess(guess) {
     }
 }
 
-function desplayGuess(guess) {
+function displayGuess(guess) {
     userInput.value = ''
     guessSlot.innerHTML +=`${guess}, `
     numGuess++;
     remaining.innerHTML=`${11-numGuess}`
     
 }
-function desplayMessage(message) {
+function displayMessage(message) {
     lowOrHi.innerHTML=`<h2>${message}</h2>`
     
+}
+function endGame() {
+    userInput.value = ''
+    userInput.setAttribute('disabled','')
+    p.classList.add('button')
+    p.innerHTML =`<h2 id ="newGame">Start new game</h2>`
+    startOver.appendChild(p)
+    playGame =false;
+    newGame()   
 }
 function newGame() {
     const newGameButton =document.querySelector('#newGame')
@@ -74,20 +84,6 @@ function newGame() {
         remaining.innerHTML=`${11-numGuess}`
         userInput.removeAttribute('disabled')
         startOver.removeChild(p)
-        playGame= true
-        
-    })
-
-    
-    
-}
-function endGame() {
-    userInput.value = ''
-    userInput.setAttribute('disabled','')
-    p.classList.add('button')
-    p.innerHTML =`<h2 id ="newGame">Start new game</h2>`
-    startOver.appendChild(p)
-    playGame =false;
-    newGame()
-    
+        playGame= true    
+    })  
 }
