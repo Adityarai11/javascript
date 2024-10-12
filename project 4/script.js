@@ -9,7 +9,7 @@ btn.addEventListener("click",function(){
     btn.innerHTML="Remove friend"
     check = 1;
     }else{
-        istatus.innerHTML= "Stringer";
+        istatus.innerHTML= "Stranger";
         istatus.style.color = "red";
         btn.innerHTML="Add friend"
         check = 0;
